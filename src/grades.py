@@ -1,13 +1,18 @@
 
-def calculate_average(grades):
-    total = 0
-    for grade in grades:
-        total += grade
 
-    if len(grades) == 0:
+def calculate_average(grades):
+    if not grades:
         return 0
 
-    return total / len(grades)
+    for grade in grades:
+        if not isinstance(grade, (int, float)) or isinstance(grade, bool):
+            raise ValueError("Grades must be numbers")
+
+        if grade < 0 or grade > 100:
+            raise ValueError("Grades must be between 0 and 100")
+
+    return sum(grades) / len(grades)
+
 
 
 def get_letter_grade(average):
