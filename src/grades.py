@@ -48,9 +48,9 @@ def find_highest_grade(grades):
     return highest
 
 
+
 def find_lowest_grade(grades):
-    lowest = 100
-    for grade in grades:
-        if grade < lowest:
-            lowest = grade
-    return lowest
+    if not grades:
+        return None
+
+    return min(grades)
