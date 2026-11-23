@@ -1,4 +1,6 @@
 
+import pytest
+
 from src.grades import (
     calculate_average,
     get_letter_grade,
@@ -42,3 +44,7 @@ def test_lowest_grade():
 def test_lowest_grade_empty_list():
     assert find_lowest_grade([]) is None
 
+
+def test_invalid_grade_above_100():
+    with pytest.raises(ValueError):
+        calculate_average([80, 120])
