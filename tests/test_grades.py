@@ -37,3 +37,8 @@ def test_highest_grade():
 
 def test_lowest_grade():
     assert find_lowest_grade([70, 85, 95]) == 70
+
+
+def test_lowest_grade_empty_list():
+    assert find_lowest_grade([]) is None
+
